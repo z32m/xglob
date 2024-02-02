@@ -3,6 +3,12 @@
 
 #include <zephyr/kernel.h>
 
+#define WAIT_FOR(x) \
+    while (!x)      \
+    k_msleep(1)
+
+#define ALIGN 4
+
 #define EVAL(s) s
 #define SPREAD(...) __VA_ARGS__
 #define ARGY(s, ...) s
@@ -21,5 +27,7 @@
 
 #define mem_alloc k_malloc
 #define mem_free k_free
+
+#define ABS(a, b) (a < b ? b - a : a - b)
 
 #endif
