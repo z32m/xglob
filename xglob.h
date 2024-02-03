@@ -3,7 +3,18 @@
 
 #include <zephyr/kernel.h>
 
-#define WAIT_FOR(x) \
+typedef struct device device_t;
+typedef struct gpio_dt_spec gpio_dt_spec_t;
+typedef struct spi_dt_spec spi_dt_spec_t;
+typedef struct adc_dt_spec adc_dt_spec_t;
+typedef struct k_mutex k_mutex_t;
+typedef struct k_timer k_timer_t;
+typedef struct k_event k_event_t;
+typedef struct k_pipe k_pipe_t;
+typedef struct pwm_dt_spec pwm_t;
+typedef struct gpio_callback gpio_callback_t;
+
+#define X_WAIT_FOR(x) \
     while (!x)      \
     k_msleep(1)
 
